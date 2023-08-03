@@ -1,0 +1,21 @@
+version: "2.3"
+
+services:
+  pokedex:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./:/app/
+    env_file:
+      - .env
+    networks:
+      - pokedex-network
+    ports:
+      - "8000:8000"
+
+networks:
+  pokedex-network:
+    driver: bridge
+    name: pokedex-network
