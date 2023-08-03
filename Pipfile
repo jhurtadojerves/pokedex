@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "==4.2.3"
 django-crispy-forms = "==2.0"
+Pillow = "==10.0.0"
 
 [dev-packages]
 black = "==23.1.0"

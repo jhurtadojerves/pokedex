@@ -1,0 +1,18 @@
+{% extends "base/list.html" %}
+{% load crispy_forms_tags %}
+{% block content_title %}
+Pokemon create!
+{% endblock %}
+{% block content %}
+  <div class="row justify-content-md-center">
+    <div class="col-11">
+      <form method="post" class="create-form" novalidate enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% block submit %}
+          <button type="submit" class="btn btn-success">Create</button>
+        {% endblock %}
+      </form>
+    </div>
+  </div>
+{% endblock %}
