@@ -137,3 +137,4 @@ dmypy.json
 
 # pipenv
 Pipfile.lock
+media/

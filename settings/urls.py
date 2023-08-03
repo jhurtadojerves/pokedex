@@ -21,7 +21,11 @@ from django.urls import path
 
 from settings.views import HomeView
 
-urlpatterns = [
-    path("", HomeView.as_view(), name="index"),
-    path("admin/", admin.site.urls),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns = (
+    [
+        path("", HomeView.as_view(), name="index"),
+        path("admin/", admin.site.urls),
+    ]
+    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)

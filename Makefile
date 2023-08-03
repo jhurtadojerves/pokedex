@@ -9,10 +9,10 @@ migrate:  ## Apply django migrations
 	docker-compose run --rm pokedex python manage.py migrate
 
 lint:  ## Fix linter errors
-	docker-compose docker-compose run --rm pokedex pokedexblack .
-	docker-compose docker-compose run --rm pokedex isort . --profile black
+	docker-compose run --rm pokedex black .
+	docker-compose run --rm pokedex isort . --profile black
 
 lint-check:  ## Run linter
-	docker-compose docker-compose run --rm pokedex black . --check
-	docker-compose docker-compose run --rm pokedex isort . --check-only --profile black
-	docker-compose docker-compose run --rm pokedex flake8 .
+	docker-compose run --rm pokedex black . --check
+	docker-compose run --rm pokedex isort . --check-only --profile black
+	docker-compose run --rm pokedex flake8 .
